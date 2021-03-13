@@ -8,16 +8,67 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ClassRoom">
-        <activity android:name=".LoginActivity">
+        android:theme="@style/AppTheme">
+
+        <!--        <activity android:name=".MainMenuActivity">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".profile.StudentRegistration"
+            android:parentActivityName=".profile.ProfileActivity" />
+        <activity
+            android:name=".notes.NoteCreate"
+            android:parentActivityName=".notes.NoteActivity" />
+        <activity
+            android:name=".attendance.AttendanceActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".components.ResultActivity"
+            android:parentActivityName=".components.CgpaActivity" />
+        <activity
+            android:name=".components.CgpaActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".notes.NoteActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".schedule.Scheduler"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".schedule.CreateScheduleActivity"
+            android:parentActivityName=".schedule.Scheduler" />
+        <activity
+            android:name=".components.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".components.About"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".profile.EditStudentActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity android:name=".MainMenuActivity" />
     </application>
 
 </manifest>

@@ -15,8 +15,9 @@ import androidx.core.app.NotificationManagerCompat
 import com.classroom.R
 
 class LoginActivity : AppCompatActivity() {
-     lateinit var buttonLogin: TextView
-     lateinit var buttonNotify: Button
+    lateinit var buttonLogin: Button
+    lateinit var register: TextView
+    lateinit var buttonNotify: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +25,17 @@ class LoginActivity : AppCompatActivity() {
 
         buttonLogin = findViewById(R.id.button_login)
         buttonLogin.setOnClickListener {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        register = findViewById(R.id.login_register)
+        register.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //NotificationChannel channel = new NotificationChannel("My notification", "My notification", IMPORTANCE_DEFAULT)
             val channel = NotificationChannel("My notification", "My notification", IMPORTANCE_DEFAULT)
             val manager = getSystemService(NotificationManager::class.java)
@@ -36,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         buttonNotify = findViewById(R.id.get_notify)
-        buttonNotify.setOnClickListener{
+        buttonNotify.setOnClickListener {
             var builder = NotificationCompat.Builder(this, "My notification")
             builder.setContentTitle("My notification Title")
             builder.setContentText("Hello from my application, this a simple notification")
