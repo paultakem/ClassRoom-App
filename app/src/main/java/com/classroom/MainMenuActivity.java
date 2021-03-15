@@ -45,13 +45,13 @@ public class MainMenuActivity extends AppCompatActivity {
 
         getSupportActionBar().show();
         divisions = new ArrayList<>();
-        divisions.add("S1 COMPUTER SCIENCE");
-        divisions.add("S2 COMPUTER SCIENCE");
-        divisions.add("S3 COMPUTER SCIENCE");
-        divisions.add("S4 COMPUTER SCIENCE");
-        divisions.add("S5 COMPUTER SCIENCE");
-        divisions.add("S6 COMPUTER SCIENCE");
-        divisions.add("S7 COMPUTER SCIENCE");
+        divisions.add("Introduction to Computer Science");
+        divisions.add("Programming in Java");
+        divisions.add("Programming in Python");
+        divisions.add("Project Course");
+        divisions.add("Discrete Mathematics");
+        divisions.add("Software Engineering");
+        divisions.add("Data Security");
         gridView = (GridView) findViewById(R.id.grid);
         basicFields.add("ATTENDANCE");
         basicFields.add("SCHEDULER");

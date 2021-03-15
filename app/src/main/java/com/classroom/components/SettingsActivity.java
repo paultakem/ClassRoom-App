@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 
-import com.classroom.AppCompatPreferenceActivity;
 import com.classroom.MainMenuActivity;
 import com.classroom.R;
 

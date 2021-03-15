@@ -1,20 +1,8 @@
 package com.classroom.courseregistration;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,7 +17,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.classroom.R;
+
+public class CourseRegActivity extends AppCompatActivity implements View.OnClickListener{
     EditText lastName;
     EditText studentId;
     Button addStudent;
@@ -46,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_register);
         Spinner spinner=(Spinner) findViewById(R.id.select_course_spinner);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(MainActivity.this,
-                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.courses)){
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(CourseRegActivity.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.pref_sync_frequency_titles)){
 
             @Override
             public boolean isEnabled(int position) {
@@ -98,13 +93,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         notificationManager = NotificationManagerCompat.from(this);
-
+/*
         lastName=(EditText) findViewById(R.id.student_last_name_edittext);
         studentId=(EditText) findViewById(R.id.student_id_edittext);
         selectCourse=(Spinner) findViewById(R.id.select_course_spinner);
         addStudent=(Button) findViewById(R.id.add_student_btn);
-
-        addStudent.setOnClickListener(MainActivity.this);
+*/
+        addStudent.setOnClickListener(CourseRegActivity.this);
 
     }
 
@@ -164,9 +159,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void addNotification(){
         String message="Registration for the course " + selectedCourse;
 
-        Intent intent =new Intent(MainActivity.this,SendNotificationActivity.class);
-        PendingIntent pendingIntent =PendingIntent.getActivity(MainActivity.this,0,intent, PendingIntent.FLAG_ONE_SHOT);
-        Notification notification = new NotificationCompat.Builder(MainActivity.this, App.CHANNEL_ID)
+        Intent intent =new Intent(CourseRegActivity.this,SendNotificationActivity.class);
+        PendingIntent pendingIntent =PendingIntent.getActivity(CourseRegActivity.this,0,intent, PendingIntent.FLAG_ONE_SHOT);
+        Notification notification = new NotificationCompat.Builder(CourseRegActivity.this, App.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_message)
                 .setContentTitle("New Notification")
                 .setContentText(message)

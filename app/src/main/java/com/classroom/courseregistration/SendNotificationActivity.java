@@ -1,15 +1,17 @@
 package com.classroom.courseregistration;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.ContextCompat;
-
 import android.app.Notification;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+
+import com.classroom.R;
 
 public class SendNotificationActivity extends AppCompatActivity implements View.OnClickListener {
     int notificationID=0;
@@ -21,12 +23,15 @@ public class SendNotificationActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    /*
         setContentView(R.layout.activity_send_notification);
         notificationManager = NotificationManagerCompat.from(this);
         editTextTitle = findViewById(R.id.edit_text_title);
         editTextMessage = findViewById(R.id.edit_text_message);
         buttonSendNotification=findViewById(R.id.button_send_notification);
         buttonSendNotification.setOnClickListener(this);
+
+     */
     }
 
 
